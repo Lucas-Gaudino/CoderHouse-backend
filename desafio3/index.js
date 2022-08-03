@@ -1,4 +1,4 @@
-const Contenedor = require('./tp2.js');
+const Contenedor = require('./contenedor.js');
 const express = require('express');
 const app = express();
 
