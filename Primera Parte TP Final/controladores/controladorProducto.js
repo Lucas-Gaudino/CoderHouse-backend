@@ -20,9 +20,9 @@ exports.deleteProducts = async function(req, res) {
     res.send({ message: "Delete OK", productList: productList });
 };
 
-exports.findCartProducts = async function(req, res) {
-    const product = await metodoProducto.findCartProducts(req, res);
-    console.log("Producto desde el server: "+ product);
-    
-    res.send({ message: product, productList: product });
+
+exports.findProducts =  async function(req, res) {
+    const products = await metodoProducto.findProducts(req, res);
+    console.log("Producto desde el server: " + products);
+    res.send({ message: products, productList: products });
 };

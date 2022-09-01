@@ -7,7 +7,7 @@ const { Router } = express;
 const imAdmin = true;
 const router = Router();
 const controladorDeProductos = require('./controladores/controladorProducto');
-const controladorDeCarrito =   require('./controladores/controladorCarrito');
+const controladorDeCarrito   = require('./controladores/controladorCarrito');
 
 app.use("/api/", router);
 

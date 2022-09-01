@@ -55,7 +55,21 @@ exports.addProductToCart = async function (req, res, addProduct) {
         return { error: 'Carrito no encontrado' };
     }
 };
-
+exports.findCartProducts = async function (req, res) {
+    const { id } = req.params;
+    const { idProduct } = req.params;
+    if(id){
+        const carrito = carritoArray.find((item) => item.id == id);
+        if (carrito) {
+            const producto = carrito.productos.find((item) => item.id == idProduct);
+            if (producto) {
+                return producto;
+            }
+            return { error: 'Producto no encontrado' };
+        }
+        return { error: 'Carrito no encontrado' };
+    }
+};
 exports.deleteProductFromCart = async function (req, res, deleteProduct) {
     const { id } = req.params;
     if(id){

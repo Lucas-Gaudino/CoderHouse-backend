@@ -12,7 +12,9 @@ getProducts();
 
 exports.createProducts = async (req, res) => {
     const { body } = req;
-    console.log(req);
+    
+    console.log(req.body);
+    
     await getProducts();
 
     body.price = Number(body.price);
@@ -50,11 +52,12 @@ exports.deleteProducts = async function (req, res) {
     nuevoContenedor.push(product);
 };
 
-exports.findProducts = function (req, res) {
+
+
+exports.findProducts =  function (req, res) {
     const { id } = req.params;
 
-    
-    const product = nuevoContenedor.find((item) => item.id == id);
+    const product =  nuevoContenedor.find((item) => item.id == id);
     //SI NO HAY ID DEVOLVEMOS LA LISTA ENTERA Y SI TAMPOCO HAY ID DEVOLVEMOS UN MENSAJE DE ERROR
     if(id){
         if (product) {
