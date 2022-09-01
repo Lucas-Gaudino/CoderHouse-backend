@@ -12,7 +12,7 @@ exports.deleteProductFromCart = async function (req, res, deleteProduct) {
 
 exports.findCartProducts = async function (req, res) {
     const producto = await metodoCarrito.findCartProducts(req, res);
-    res.send({ message: producto, productList: productList });
+    res.send({ message: producto, productList: producto });
 };
 exports.findCart = async function(req, res) {
     const carrito = await metodoCarrito.findCarrito(req, res);
@@ -24,8 +24,8 @@ exports.deleteCart = async function(req, res) {
     res.send({ message: "Delete OK", cartList: cartList });
 };
 
-exports.addProductToCart = async function (req, res, addProduct) {
-    const carrito = await metodoCarrito.addProductToCart(req, res, addProduct);
+exports.addProductToCart = async function (req, res) {
+    const carrito = await metodoCarrito.addProductToCart(req, res);
     res.send({ message: carrito, cartList: carrito });
 };
 

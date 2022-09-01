@@ -87,19 +87,19 @@ router.delete("/carrito/:id", (req, res) => {
 
 // PRODUCTOS DE CARRITOS
 
-router.get("/carrito/productos/:id?", (req, res) => {
+router.get("/carrito/productos/:idCart/:idProduct", (req, res) => {
     controladorDeCarrito.findCartProducts(req, res);
 });
 
 router.post("/carrito/productos", (req, res) => {
-    controladorDeCarrito.createCartProducts(req, res);
+    controladorDeCarrito.createCart(req, res);
 });
 
-router.put("/carrito/productos/:id", (req, res) => {
-    controladorDeCarrito.updateCartProducts(req, res);
+router.post("/carrito/productos/:idCart", (req, res) => {
+    controladorDeCarrito.addProductToCart(req, res);
 });
 
-router.delete("/carrito/productos/:id", (req, res) => {
+router.delete("/carrito/productos/:idCart/:idProduct", (req, res) => {
     controladorDeCarrito.deleteCartProducts(req, res);
 });
 
