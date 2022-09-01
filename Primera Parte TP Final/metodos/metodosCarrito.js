@@ -80,13 +80,15 @@ exports.findCartProducts = async function (req, res) {
         return { error: 'Carrito no encontrado' };
     }
 };
-exports.deleteProductFromCart = async function (req, res, deleteProduct) {
-    const { id } = req.params;
-    if(id){
-        const carrito = carritoArray.find((item) => item.id == id);
+exports.deleteProductFromCart = async function (req, res) {
+    const { idCart } = req.params;
+    const { idProduct } = req.params;
+    if(idCart){
+        const carrito = carritoArray.find((item) => item.id == idCart);
         if (carrito) {
-            carrito.productos = carrito.productos.filter((item) => item.id != deleteProduct);
-            return carrito;
+            const producto = carrito.productos.filter((item) => item.id == idProduct);
+            return producto;
+
         }
         return { error: 'Carrito no encontrado' };
     }

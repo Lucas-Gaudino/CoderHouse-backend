@@ -100,9 +100,12 @@ router.post("/carrito/productos/:idCart", (req, res) => {
 });
 
 router.delete("/carrito/productos/:idCart/:idProduct", (req, res) => {
-    controladorDeCarrito.deleteCartProducts(req, res);
+    controladorDeCarrito.deleteProductFromCart(req, res);
 });
 
+router.delete("/carrito/productos/:idCart", (req, res) => {
+    controladorDeCarrito.deleteCart(req, res);
+});
 
 
 

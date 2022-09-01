@@ -5,8 +5,8 @@ exports.createCart = async function (req, res) {
     res.send({ message: "Creation OK", cartAdded: carritoNuevo });
 };
 
-exports.deleteProductFromCart = async function (req, res, deleteProduct) {
-    const carrito = await metodoCarrito.deleteProductFromCart(req, res, deleteProduct);
+exports.deleteProductFromCart = async function (req, res) {
+    const carrito = await metodoCarrito.deleteProductFromCart(req, res);
     res.send({ message: "Delete OK", cart: carrito });
 };
 
