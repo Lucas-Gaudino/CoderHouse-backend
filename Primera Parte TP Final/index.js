@@ -3,13 +3,8 @@ const app = express();
 const { engine } = require('express-handlebars');
 const Products = require('./clases');
 const PORT = 8080;
-const { Router } = express;
-const imAdmin = true;
-const router = Router();
-const controladorDeProductos = require('./controladores/controladorProducto');
-const controladorDeCarrito   = require('./controladores/controladorCarrito');
 
-app.use("/api/", router);
+
 
 
 const server = app.listen(PORT, () => {
@@ -20,6 +15,15 @@ server.on('error', (error) => console.log(`Error en servidor ${error}`));
 app.use('/public', express.static(__dirname + '/public'));
 app.use(express.json()); //Los objetos que llegan en formato JSON
 app.use(express.urlencoded({ extended: true }));//Los objetos que llegan en formato URL estan extendidos
+
+
+const { Router } = express;
+const imAdmin = true;
+const router = Router();
+const controladorDeProductos = require('./controladores/controladorProducto');
+const controladorDeCarrito   = require('./controladores/controladorCarrito');
+app.use("/api/", router);
+
 
 app.set('view engine', 'hbs');
 app.set('views', './views');

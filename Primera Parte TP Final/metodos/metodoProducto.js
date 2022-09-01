@@ -21,7 +21,7 @@ exports.createProducts = async (req, res) => {
     body.code = Number(body.code);
     body.stock = Number(body.stock);
 
-    body.id = arrayCompleto.length + 1;
+    body.id = nuevoContenedor.length + 1;
     body.timestamp = Date.now();
     console.log(body);
 
