@@ -1,0 +1,49 @@
+{{> navbar}}
+<div class="d-flex">
+{{> form}}
+<br/>
+
+<style>
+.overflow-lucas{
+    overflow: scroll;
+    height: 500px;
+}
+</style>
+<div class="container shadow p-3 mb-5 bg-white rounded  overflow-lucas">
+    <h1 id="textito" class="text-center">Listado de productos</h1>
+{{#if productsExist}}
+
+            <table id="table" class="table">
+                 <thead>
+                    <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">imagen</th>
+                    </tr>
+                </thead>
+                <tbody>
+    {{#each products}}
+        
+               
+                    <tr>
+                    <th scope="row">{{this.id}} </th>
+                    
+                    <td> {{this.title}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.stock}}</td>
+ 
+  </tr>
+
+        {{/each}}
+        </tbody>
+    </table>
+{{/if}}
+{{#else}}
+    <p>No hay productos</p>
+{{/else}}
+</div>
+<br/>
+</div>
+{{> footer}}
+<br/>
