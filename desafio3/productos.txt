@@ -1,1 +1,0 @@
-[{"id":1,"nombre":"Zapatos","marca":"Nike"},{"id":2,"nombre":"Zapatos","marca":"Nike"},{"id":3,"nombre":"Zapatos","marca":"Nike"}]
